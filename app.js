@@ -13,9 +13,10 @@ const createError = require('http-errors'),
   User = require("./models/Account"),
   Routes = require("./routes/index");
 
+require('dotenv').config()
+
 mongoose.connect(
-  'mongodb+srv://mileslowry:testpassword@ml-cluster1.hks6n.mongodb.net/amano?retryWrites=true&w=majority',
-  // process.env.MONGODB_URI,
+  process.env.MONGODB_URI,
   { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true }
 );
 
